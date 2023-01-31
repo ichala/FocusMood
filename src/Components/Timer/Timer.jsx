@@ -6,7 +6,7 @@ const START_DURATION = 10;
 
 const Timer = () => {
   const { Config } = useContext(PreferencesContext);
-  const [currentMinutes, setMinutes] = useState(Config.timer);
+  const [currentMinutes, setMinutes] = useState(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
   const [currentSeconds, setSeconds] = useState('00');
   const [isStop, setIsStop] = useState(false);
   const [duration, setDuration] = useState(Config.timer);
@@ -20,7 +20,7 @@ const Timer = () => {
     setIsRunning(false);
   };
   const resetHandler = () => {
-    setMinutes(Config.timer);
+    setMinutes(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
     setSeconds('00');
     setIsRunning(false);
     setIsStop(false);
