@@ -3,6 +3,9 @@ import { HiMusicNote } from 'react-icons/hi';
 import { BsYoutube } from 'react-icons/bs';
 import { IoMdSettings } from 'react-icons/io';
 
+import Settings from './Components/Settings/Settings';
+import Timer from './Components/Timer/Timer';
+
 function App() {
   return (
     <div data-theme="night">
@@ -13,13 +16,10 @@ function App() {
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
               <div
-                data-theme="night"
                 className="min-h-screen bg-gradient-to-b from-base-100 to-base-300"
               >
                 <div className="flex justify-center items-center min-h-screen">
-                  <div className="relative glass w-96 h-96   rounded-full hover:border-none flex justify-center items-center text-center p-5 shadow-xl">
-                    <h2 className="text-8xl ">17:00</h2>
-                  </div>
+                  <Timer />
                   <div className="absolute  z-50 rounded-lg top-0 flex ">
                     <div className="dropdown dropdown-hover ">
                       <label tabIndex={0} className="btn m-1 glass">
@@ -50,7 +50,7 @@ function App() {
             <div className="drawer-side">
               <label htmlFor="my-drawer" className="drawer-overlay" />
               <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-                <li>2</li>
+                <li>3</li>
                 <li>2</li>
               </ul>
             </div>
@@ -59,8 +59,7 @@ function App() {
         <div className="drawer-side">
           <label htmlFor="my-drawer-4" className="drawer-overlay" />
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-            <li>2</li>
-            <li>2</li>
+            <Settings />
           </ul>
         </div>
       </div>
