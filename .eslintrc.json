@@ -19,7 +19,13 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "linebreak-style":0
+    "linebreak-style":0,
+    "react/prop-types": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-noninteractive-tabindex":"off",
+    "jsx-a11y/click-events-have-key-events":0,
+    "jsx-a11y/no-noninteractive-element-interactions":0,
+    "react/jsx-props-no-spreading":0
   },
   "ignorePatterns": [
     "dist/",
