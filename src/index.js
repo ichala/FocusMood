@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { Preferences } from './Context/Preferences';
 import './Global.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Preferences>
+      <App />
+    </Preferences>
   </React.StrictMode>,
 );
