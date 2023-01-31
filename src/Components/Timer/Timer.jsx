@@ -99,7 +99,7 @@ const Timer = () => {
           <button
             type="button"
             onClick={resetHandler}
-            className="btn btn-outline-secondary btn-xs inline m-3"
+            className="btn btn-error btn-xs inline m-3"
             disabled={!isRunning && !isStop}
           >
             <BsFillStopFill size={22} />
