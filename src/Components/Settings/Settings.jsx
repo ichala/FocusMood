@@ -52,10 +52,10 @@ const Settings = () => {
                     <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
                       <div className="flex-grow text-sm font-bold">{theme}</div>
                       <div className="flex flex-shrink-0 flex-wrap gap-1">
-                        <div className="bg-primary w-2 rounded" />
-                        <div className="bg-secondary w-2 rounded" />
-                        <div className="bg-accent w-2 rounded" />
-                        <div className="bg-neutral w-2 rounded" />
+                        <div className="bg-primary w-1 rounded" />
+                        <div className="bg-secondary w-1 rounded" />
+                        <div className="bg-accent w-1 rounded" />
+                        <div className="bg-neutral w-1 rounded" />
                       </div>
                     </div>
                   </div>
