@@ -24,7 +24,7 @@ function App() {
               <input id="my-drawer" type="checkbox" className="drawer-toggle" />
               <div className="drawer-content">
                 <div
-                  className="min-h-screen bg-gradient-to-b from-base-100 to-base-300"
+                  className="min-h-screen "
                 >
                   <div className="flex justify-center items-center min-h-screen">
                     <Player />
