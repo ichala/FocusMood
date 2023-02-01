@@ -5,7 +5,9 @@ import { IoIosCloseCircle } from 'react-icons/io';
 import { PreferencesContext } from '../../Context/Preferences';
 
 const WatchHistory = () => {
-  const { Config, setConfig, setVideo } = useContext(PreferencesContext);
+  const {
+    Config, setConfig, setVideo, setVideoControls, VideoControls,
+  } = useContext(PreferencesContext);
   const { history } = Config;
   return (
     <>
@@ -39,7 +41,10 @@ const WatchHistory = () => {
                 <div className="card-actions justify-center">
                   <button
                     onClick={
-            () => setVideo(video)
+            () => {
+              setVideo(video);
+              setVideoControls({ ...VideoControls, playing: true });
+            }
           }
                     type="button"
                     className="btn btn-primary"
