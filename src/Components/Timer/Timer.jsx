@@ -54,7 +54,9 @@ const Timer = () => {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [isRunning]);
+    setMinutes(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
+    setSeconds('00');
+  }, [isRunning, Config]);
 
   return (
     <>
