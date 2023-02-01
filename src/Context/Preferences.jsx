@@ -12,10 +12,15 @@ const defaultPreferences = {
 export const Preferences = ({ children }) => {
   const [Config, setConfig] = useState(JSON.parse(localStorage.getItem('focus-mood')) || defaultPreferences);
   const [Video, setVideo] = useState(null);
+  const [VideoControls, setVideoControls] = useState({
+    volume: 0.5,
+    playing: false,
+    loop: true,
+  });
   localStorage.setItem('focus-mood', JSON.stringify(Config));
   return (
     <PreferencesContext.Provider value={{
-      setVideo, Video, Config, setConfig, ThemeList,
+      setVideo, Video, Config, setConfig, ThemeList, VideoControls, setVideoControls,
     }}
     >
       {children}
