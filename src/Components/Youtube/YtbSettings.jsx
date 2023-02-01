@@ -97,7 +97,7 @@ const YtbSettings = () => {
               () => setVideoControls({ ...VideoControls, playing: false })
             }
             type="button"
-            className="btn btn-ghost btn-xs"
+            className="btn btn-ghost btn-xs uppercase gap-1"
           >
             <BsFillPauseFill />
             Pause
@@ -116,7 +116,7 @@ const YtbSettings = () => {
             }
           }
             type="button"
-            className="btn btn-primary btn-xs"
+            className="btn btn-primary btn-xs uppercase gap-1"
           >
             <BsFillPlayFill />
             Play
@@ -140,7 +140,7 @@ const YtbSettings = () => {
                 () => setVideoControls({ ...VideoControls, loop: false })
               }
               type="button"
-              className="btn btn-primary btn-xs"
+              className="btn btn-primary btn-xs uppercase gap-1"
             >
               <ImLoop2 />
               Loop
