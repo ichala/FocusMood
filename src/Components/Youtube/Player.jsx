@@ -8,7 +8,7 @@ const Player = () => {
   return (
     <>
       <ReactPlayer volume={VideoControls.volume} playing={VideoControls.playing} loop={VideoControls.loop} className="absolute  left-0 min-w-full min-h-screen" url={Video} />
-      <div className="absolute bg-base-300/70 left-0 min-w-full min-h-screen" />
+      <div className="absolute bg-base-300 left-0 min-w-full min-h-screen" style={{ opacity: VideoControls.opacity }} />
     </>
   );
 };
