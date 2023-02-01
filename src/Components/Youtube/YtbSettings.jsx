@@ -161,10 +161,28 @@ const YtbSettings = () => {
           defaultValue={VideoControls.volume}
           min={0}
           max={1}
-          step={0.05}
+          step={0.01}
           className="range range-xs"
         />
 
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Video Opacity</span>
+        </label>
+        <input
+          type="range"
+          onChange={
+        (e) => {
+          setVideoControls({ ...VideoControls, opacity: e.target.value });
+        }
+      }
+          defaultValue={VideoControls.volume}
+          min={0}
+          max={1}
+          step={0.01}
+          className="range range-xs"
+        />
       </div>
 
     </div>
