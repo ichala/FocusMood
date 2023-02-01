@@ -9,6 +9,7 @@ import YtbSettings from './Components/Youtube/YtbSettings';
 import Player from './Components/Youtube/Player';
 import WatchHistory from './Components/Youtube/WatchHistory';
 import { PreferencesContext } from './Context/Preferences';
+import Github from './Components/Github/Github';
 
 function App() {
   const { Config } = useContext(PreferencesContext);
@@ -28,6 +29,7 @@ function App() {
                   <div className="flex justify-center items-center min-h-screen">
                     <Player />
                     <Timer />
+                    <Github />
                     <div className="absolute  z-50 rounded-lg top-0 flex ">
                       <div className="dropdown dropdown-hover ">
                         <label tabIndex={0} className="btn m-1 glass">
@@ -71,8 +73,11 @@ function App() {
             </ul>
 
           </div>
+
         </div>
+
       </div>
+
     </>
   );
 }

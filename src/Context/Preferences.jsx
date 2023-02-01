@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 
 export const PreferencesContext = createContext();
-const ThemeList = ['cupcake', 'synthwave', 'halloween', 'forest', 'luxury', 'dracula', 'night', 'winter'];
+const ThemeList = ['cupcake', 'synthwave', 'halloween', 'forest', 'luxury', 'dracula', 'dark', 'black', 'night', 'winter'];
 
 const defaultPreferences = {
   timer: 15,
@@ -16,6 +16,7 @@ export const Preferences = ({ children }) => {
     volume: 0.5,
     playing: false,
     loop: true,
+    opacity: 0.7,
   });
   localStorage.setItem('focus-mood', JSON.stringify(Config));
   return (
