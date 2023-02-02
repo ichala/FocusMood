@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BsFillPauseFill, BsFillPlayFill, BsFillStopFill } from 'react-icons/bs';
+import { BsFillPlayFill, BsFillStopFill } from 'react-icons/bs';
 import { PreferencesContext } from '../../Context/Preferences';
 
 const START_DURATION = 10;
@@ -11,14 +11,18 @@ const Timer = () => {
   const [isStop, setIsStop] = useState(false);
   const [duration, setDuration] = useState(Config.timer);
   const [isRunning, setIsRunning] = useState(false);
+
+  const getPercentage = () => {
+    const percentage = ((duration - (parseInt(currentMinutes, 10) * 60
+    + parseInt(currentSeconds, 10))) / duration) * 100;
+    return 100 - percentage;
+  };
+
   const startHandler = () => {
     setDuration(parseInt(0, 10) + 60 * parseInt(Config.timer, 10));
     setIsRunning(true);
   };
-  const stopHandler = () => {
-    setIsStop(true);
-    setIsRunning(false);
-  };
+
   const resetHandler = () => {
     setMinutes(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
     setSeconds('00');
@@ -56,46 +60,39 @@ const Timer = () => {
     }
     setMinutes(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
     setSeconds('00');
-  }, [isRunning, Config]);
+  }, [isRunning, Config.timer]);
 
   return (
     <>
       <div
         className="relative glass w-96 h-96   rounded-full hover:border-none flex justify-center items-center text-center p-5 shadow-xl"
       >
-        <div className="App">
+        <div className="absolute z-2 text-white radial-progress" style={{ '--value': getPercentage(), '--size': '24rem', '--thickness': '10px' }} />
+        <div className="z-50 ">
+
           <div className="text-8xl">
             {currentMinutes}
             <span className="mx-3">:</span>
             {currentSeconds}
           </div>
           {!isRunning && !isStop && (
-          <button
-            type="button"
-            onClick={startHandler}
-            className="btn btn-primary btn-xs inline m-3"
-          >
-            <BsFillPlayFill size={22} />
-          </button>
-          )}
-          {isRunning && (
-          <button
-            type="button"
-            onClick={stopHandler}
-            className="btn btn-danger btn-xs inline m-3"
-          >
-            <BsFillPauseFill size={22} />
-          </button>
+            <button
+              type="button"
+              onClick={startHandler}
+              className="btn btn-primary btn-xs inline m-3"
+            >
+              <BsFillPlayFill size={22} />
+            </button>
           )}
 
           {isStop && (
-          <button
-            type="button"
-            onClick={resumeHandler}
-            className="btn btn-success btn-xs inline m-3"
-          >
-            <BsFillPlayFill size={22} />
-          </button>
+            <button
+              type="button"
+              onClick={resumeHandler}
+              className="btn btn-success btn-xs inline m-3"
+            >
+              <BsFillPlayFill size={22} />
+            </button>
           )}
 
           <button
@@ -107,8 +104,8 @@ const Timer = () => {
             <BsFillStopFill size={22} />
           </button>
         </div>
-
       </div>
+
     </>
   );
 };
