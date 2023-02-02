@@ -67,7 +67,7 @@ const Timer = () => {
       <div
         className="relative glass w-96 h-96   rounded-full hover:border-none flex justify-center items-center text-center p-5 shadow-xl"
       >
-        <div className="absolute z-2 text-white radial-progress" style={{ '--value': getPercentage(), '--size': '24rem', '--thickness': '10px' }} />
+        <div className="absolute z-2 text-white radial-progress" style={{ '--value': getPercentage(), '--size': '24rem', '--thickness': '5px' }} />
         <div className="z-50 ">
 
           <div className="text-8xl">
