@@ -4,7 +4,9 @@ import {
 } from 'react-icons/bs';
 import { RiThunderstormsFill } from 'react-icons/ri';
 import { BiWater } from 'react-icons/bi';
-import { GiCoffeeCup } from 'react-icons/gi';
+import { GiCampfire, GiCircleForest, GiCoffeeCup } from 'react-icons/gi';
+import { FaGuitar } from 'react-icons/fa';
+import { MdPiano } from 'react-icons/md';
 import SoundButton from './SoundButton';
 
 const Sounds = [
@@ -24,6 +26,22 @@ const Sounds = [
     link: '/sounds/coffe.mp3',
     icon: <GiCoffeeCup size={20} />,
   },
+  {
+    link: '/sounds/forest.mp3',
+    icon: <GiCircleForest size={20} />,
+  },
+  {
+    link: '/sounds/piano.mp3',
+    icon: <MdPiano size={20} />,
+  },
+  {
+    link: '/sounds/fire.mp3',
+    icon: <GiCampfire size={20} />,
+  },
+  {
+    link: '/sounds/guitar.mp3',
+    icon: <FaGuitar size={20} />,
+  },
 
 ];
 
@@ -32,7 +50,7 @@ const SoundEffects = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-1 justify-start items-start">
+      <div className="flex flex-wrap gap-1 justify-start items-start ">
         {Sounds.map((sound) => (
           <SoundButton key={sound.link} link={sound.link} icon={sound.icon} volume={Volume} />
         ))}
