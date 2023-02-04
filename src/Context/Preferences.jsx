@@ -18,10 +18,19 @@ export const Preferences = ({ children }) => {
     loop: true,
     opacity: 0.7,
   });
+  const [Alarm, setAlarm] = useState(false);
   localStorage.setItem('focus-mood', JSON.stringify(Config));
   return (
     <PreferencesContext.Provider value={{
-      setVideo, Video, Config, setConfig, ThemeList, VideoControls, setVideoControls,
+      setVideo,
+      Video,
+      Config,
+      setConfig,
+      ThemeList,
+      VideoControls,
+      setVideoControls,
+      Alarm,
+      setAlarm,
     }}
     >
       {children}

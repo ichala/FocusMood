@@ -5,7 +5,9 @@ import { PreferencesContext } from '../../Context/Preferences';
 const START_DURATION = 10;
 
 const Timer = () => {
-  const { Config } = useContext(PreferencesContext);
+  const { Config, setAlarm, Alarm } = useContext(PreferencesContext);
+  const [audio] = useState(new Audio('/sounds/alarm.mp3'));
+  audio.loop = true;
   const [currentMinutes, setMinutes] = useState(Config.timer < 10 ? `0${Config.timer}` : Config.timer);
   const [currentSeconds, setSeconds] = useState('00');
   const [isStop, setIsStop] = useState(false);
@@ -19,6 +21,7 @@ const Timer = () => {
   };
 
   const startHandler = () => {
+    setAlarm(false);
     setDuration(parseInt(0, 10) + 60 * parseInt(Config.timer, 10));
     setIsRunning(true);
   };
@@ -40,12 +43,18 @@ const Timer = () => {
   };
 
   useEffect(() => {
+    if (Alarm) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
     if (isRunning === true) {
       let timer = duration;
       let minutes; let
         seconds;
       const interval = setInterval(() => {
         if (--timer <= 0) {
+          setAlarm(true);
           resetHandler();
         } else {
           minutes = parseInt(timer / 60, 10);
@@ -65,9 +74,9 @@ const Timer = () => {
   return (
     <>
       <div
-        className="relative glass w-96 h-96   rounded-full hover:border-none flex justify-center items-center text-center p-5 shadow-xl"
+        className={`${Alarm && 'animate-pulse'} relative flex-col glass w-96 h-96   rounded-full hover:border-none flex justify-center items-center text-center p-5 shadow-xl`}
       >
-        <div className="absolute z-2 text-white radial-progress" style={{ '--value': getPercentage(), '--size': '24rem', '--thickness': '4px' }} />
+        <div className="absolute z-2 text-secondary duration-700 ease-in-out  radial-progress" style={{ '--value': getPercentage(), '--size': '24rem', '--thickness': '4px' }} />
         <div className="z-50 ">
 
           <div className="text-8xl">
@@ -75,7 +84,9 @@ const Timer = () => {
             <span className="mx-3">:</span>
             {currentSeconds}
           </div>
-          {!isRunning && !isStop && (
+          <div className="flex justify-center items-center ">
+
+            {!isRunning && !isStop && (
             <button
               type="button"
               onClick={startHandler}
@@ -83,9 +94,9 @@ const Timer = () => {
             >
               <BsFillPlayFill size={22} />
             </button>
-          )}
+            )}
 
-          {isStop && (
+            {isStop && (
             <button
               type="button"
               onClick={resumeHandler}
@@ -93,17 +104,37 @@ const Timer = () => {
             >
               <BsFillPlayFill size={22} />
             </button>
-          )}
+            )}
 
-          <button
-            type="button"
-            onClick={resetHandler}
-            className="btn btn-error btn-xs inline m-3"
-            disabled={!isRunning && !isStop}
-          >
-            <BsFillStopFill size={22} />
-          </button>
+            <button
+              type="button"
+              onClick={resetHandler}
+              className="btn btn-error btn-xs inline m-3"
+              disabled={!isRunning && !isStop}
+            >
+              <BsFillStopFill size={22} />
+            </button>
+
+            {
+            Alarm && (
+              <button
+                type="button"
+                onClick={
+                  () => {
+                    setAlarm(false);
+                    audio.pause();
+                    resetHandler();
+                  }
+                }
+                className="btn btn-error btn-xs inline m-3"
+              >
+                Stop Alarm
+              </button>
+            )
+          }
+          </div>
         </div>
+
       </div>
 
     </>
