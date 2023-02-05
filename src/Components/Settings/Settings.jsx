@@ -1,6 +1,22 @@
 import React, { useState, useContext } from 'react';
 import { PreferencesContext } from '../../Context/Preferences';
 
+const Alarms = [
+  {
+    name: 'IPHONE',
+    url: '/sounds/alarm.mp3',
+  },
+  {
+    name: 'BUZZER',
+    url: '/sounds/buzzer.wav',
+  },
+  {
+    name: 'Chiken?',
+    url: '/sounds/chicken.mp3',
+  },
+
+];
+
 const Settings = () => {
   const { Config, setConfig, ThemeList } = useContext(PreferencesContext);
   const [Timer, setTimer] = useState(Config.timer);
@@ -19,6 +35,32 @@ const Settings = () => {
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
         />
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Customize your Alarm </span>
+        </label>
+        <select
+          onChange={
+          (e) => {
+            const alarm = Alarms.find((item) => item.name === e.target.value);
+            if (!alarm) {
+              return;
+            }
+            setConfig({ ...Config, alarm: { name: alarm.name } });
+          }
+
+        }
+          className="select select-bordered w-full max-w-xs"
+        >
+          {
+            Alarms.map((alarm) => (
+              <option key={alarm.name} value={alarm.name}>{alarm.name}</option>
+            ))
+
+          }
+
+        </select>
       </div>
       <div className="flex justify-center items-center mt-3 w-full">
         <button
