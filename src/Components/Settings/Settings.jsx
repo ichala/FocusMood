@@ -20,6 +20,21 @@ const Settings = () => {
           className="input input-bordered w-full max-w-xs"
         />
       </div>
+      <div className="form-control">
+        <label className="label cursor-pointer">
+          <span className="label-text">Disable Alarm ?</span>
+          <input
+            type="checkbox"
+            className="toggle"
+            checked={Config.disable_alarm}
+            onChange={
+            () => {
+              setConfig({ ...Config, disable_alarm: !Config.disable_alarm });
+            }
+          }
+          />
+        </label>
+      </div>
       <div className="flex justify-center items-center mt-3 w-full">
         <button
           type="button"
@@ -35,6 +50,7 @@ const Settings = () => {
         </button>
 
       </div>
+
       <div className="flex flex-col gap-2 m-5">
         {
             ThemeList.map((theme) => (

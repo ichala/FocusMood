@@ -43,7 +43,7 @@ const Timer = () => {
   };
 
   useEffect(() => {
-    if (Alarm) {
+    if (Alarm && !Config.disable_alarm) {
       audio.play();
     } else {
       audio.pause();

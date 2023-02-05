@@ -7,6 +7,7 @@ const defaultPreferences = {
   timer: 15,
   theme: 'night',
   history: [],
+  disable_alarm: false,
 };
 
 export const Preferences = ({ children }) => {
