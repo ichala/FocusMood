@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+<p align='center'>
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ichala/kanban-it?color=blue&label=Repo-Size" />
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/ichala/kanban-it?style=social?color=blue">
+<img alt="GitHub forks" src="https://img.shields.io/badge/Open-Source-blue">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FocusMood. 
 
-## Available Scripts
+> FocusMood is the ultimate customizable timer experience. Built with React, TailwindCSS, and Redux, this timer not only sets an alarm but also provides a unique and relaxing experience with video playback from multiple sources and ASMR sound effects. Create your own personalized timer with a variety of customization options. Say goodbye to boring and generic alarm clocks, and start each day with a calming and rejuvenating experience.
 
-In the project directory, you can run:
+<a href="https://www.focusmood.chala.dev/" target=_blank>
+<img align="center" alt="Ali LinkedIN" width="100%" src="https://user-images.githubusercontent.com/89282221/217003836-038b2bbf-7049-42df-bd2e-791db508a884.png" />
+</a>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Table of Contents 
 
-### `npm run build`
+* [Installation](#installation)
+* [Tools](#tools)
+* [Live Demo & Screenshots](#live-demo)
+* [Authors](#authors)
+* [Contributing](#contributing)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+- git clone https://github.com/ichala/FocusMood.git
+- cd FocusMood
+- yarn/npm install 
+- yarn/npm start 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tools
 
-### `npm run eject`
+- React.js
+- TailwindCss/DaisyUI
+- Jest
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Live Demo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[FocusMood Live Demo]() 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+👤 **Ali Jendoubi**
 
-## Learn More
+- GitHub: [@ichala](https://github.com/ichala)
+- Twitter: [@_ichala](https://twitter.com/_ichala)
+- LinkedIn: [@alijendoubi](https://www.focusmood.chala.dev/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is MIT licensed.
